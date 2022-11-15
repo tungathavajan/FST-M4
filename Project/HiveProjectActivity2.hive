@@ -1,0 +1,13 @@
+#Activity2
+
+hive> SELECT COUNT(*) FROM episodeIV where INSTR(line, 'Luke')>0;
+
+#Output was 56
+
+#storing in HDFS
+hive> INSERT OVERWRITE DIRECTORY '/user/tungath/outputs/export3'
+    > SELECT COUNT(*) FROM episodeIV where INSTR(line, 'Luke')>0;
+
+#storing in Local
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/user/tungath/outputs/export3'
+    > SELECT COUNT(*) FROM episodeIV where INSTR(line, 'Luke')>0;
